@@ -1,2 +1,2 @@
 # Calculator-PyQt5-
-Project of simple calculator.
+Simple calculator which I made in Python with PyQt5 framework.
