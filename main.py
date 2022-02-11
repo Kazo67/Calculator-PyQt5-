@@ -209,10 +209,8 @@ class ApplicationWindow(QMainWindow):
         self.deleteOne.setObjectName("deleteOne")
         self.setCentralWidget(self.centralwidget)
 
-        # method retranslate_ui
         self.retranslate_ui()
         QtCore.QMetaObject.connectSlotsByName(self)
-
 
         # Mechanism of the program
         self.mechanism()
@@ -299,26 +297,25 @@ class ApplicationWindow(QMainWindow):
         self.shortcut8.activated.connect(lambda: _setLabelText(_translate("Kalkulator", str(self.label.text() + "8"))))
         self.shortcut9.activated.connect(lambda: _setLabelText(_translate("Kalkulator", str(self.label.text() + "9"))))
 
+        self.shortcut_divide = QShortcut(QKeySequence('/'), self)
+        self.shortcut_plus = QShortcut(QKeySequence('+'), self)
+        self.shortcut_sum = QShortcut(QKeySequence('='), self)
+        self.shortcut_enter = QShortcut(QKeySequence('Return'), self)
+        self.shortcut_minus = QShortcut(QKeySequence('-'), self)
+        self.shortcut_multiply = QShortcut(QKeySequence('*'), self)
+        self.shortcut_point = QShortcut(QKeySequence('.'), self)
+        self.shortcut_backspace = QShortcut(QKeySequence('Backspace'), self)
+        self.shortcut_delete = QShortcut(QKeySequence('Del'), self)
 
-        self.shortcutDivide = QShortcut(QKeySequence('/'), self)
-        self.shortcutPlus = QShortcut(QKeySequence('+'), self)
-        self.shortcutSum = QShortcut(QKeySequence('='), self)
-        self.shortcutEnter = QShortcut(QKeySequence('Return'), self)
-        self.shortcutMinus = QShortcut(QKeySequence('-'), self)
-        self.shortcutMultiply = QShortcut(QKeySequence('*'), self)
-        self.shortcutPoint = QShortcut(QKeySequence('.'), self)
-        self.shortcutBackspace = QShortcut(QKeySequence('Backspace'), self)
-        self.shortcutDelete = QShortcut(QKeySequence('Del'), self)
-
-        self.shortcutDivide.activated.connect(lambda: _setLabelText(_translate("Kalkulator", Helper.add_symbol_at_the_end_of_label(self.label.text(), "/"))))
-        self.shortcutPlus.activated.connect(lambda: _setLabelText(_translate("Kalkulator", Helper.add_symbol_at_the_end_of_label(self.label.text(), "+"))))
-        self.shortcutSum.activated.connect(lambda: _setLabelText(_translate("Kalkulator", Helper.sum_the_value(self.label.text()))))
-        self.shortcutEnter.activated.connect(lambda: _setLabelText(_translate("Kalkulator", Helper.sum_the_value(self.label.text()))))
-        self.shortcutMinus.activated.connect(lambda: _setLabelText(_translate("Kalkulator", Helper.add_symbol_at_the_end_of_label(self.label.text(), "-"))))
-        self.shortcutMultiply.activated.connect(lambda: _setLabelText(_translate("Kalkulator", Helper.add_symbol_at_the_end_of_label(self.label.text(), "*"))))
-        self.shortcutPoint.activated.connect(lambda: _setLabelText(_translate("Kalkulator", Helper.add_symbol_at_the_end_of_label(self.label.text(), "."))))
-        self.shortcutBackspace.activated.connect(lambda: _setLabelText(_translate("Kalkulator", Helper.delete_last_character_of_string(self.label.text()))))
-        self.shortcutDelete.activated.connect(lambda: _setLabelText(_translate("Kalkulator", str(""))))
+        self.shortcut_divide.activated.connect(lambda: _setLabelText(_translate("Kalkulator", Helper.add_symbol_at_the_end_of_label(self.label.text(), "/"))))
+        self.shortcut_plus.activated.connect(lambda: _setLabelText(_translate("Kalkulator", Helper.add_symbol_at_the_end_of_label(self.label.text(), "+"))))
+        self.shortcut_sum.activated.connect(lambda: _setLabelText(_translate("Kalkulator", Helper.sum_the_value(self.label.text()))))
+        self.shortcut_enter.activated.connect(lambda: _setLabelText(_translate("Kalkulator", Helper.sum_the_value(self.label.text()))))
+        self.shortcut_minus.activated.connect(lambda: _setLabelText(_translate("Kalkulator", Helper.add_symbol_at_the_end_of_label(self.label.text(), "-"))))
+        self.shortcut_multiply.activated.connect(lambda: _setLabelText(_translate("Kalkulator", Helper.add_symbol_at_the_end_of_label(self.label.text(), "*"))))
+        self.shortcut_point.activated.connect(lambda: _setLabelText(_translate("Kalkulator", Helper.add_symbol_at_the_end_of_label(self.label.text(), "."))))
+        self.shortcut_backspace.activated.connect(lambda: _setLabelText(_translate("Kalkulator", Helper.delete_last_character_of_string(self.label.text()))))
+        self.shortcut_delete.activated.connect(lambda: _setLabelText(_translate("Kalkulator", str(""))))
         # endregion Shortcuts
 
         # Not necessary
@@ -326,7 +323,7 @@ class ApplicationWindow(QMainWindow):
 
 
 # Main function
-def application():
+def main():
     # Creating instance of QApplication class
     # QApplication takes a list of string as input
     # So QApplication is also able to work with [] argument
@@ -345,4 +342,4 @@ def application():
 
 
 if __name__ == "__main__":
-    application()
+    main()
