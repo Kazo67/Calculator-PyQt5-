@@ -10,30 +10,25 @@ class Helper:
             '6', '7', '8',
             '9'
         ]
-        if (symbol != "."):
-            if (symbol != "0"):
+        if symbol != ".":
+            if symbol != "0":
                 if len(string) > 0:
                     for number in numbers:
-                        if (string[-1] == number):
+                        if string[-1] == number:
                             string += symbol
                 return string
-            if (symbol == "0"):
+            if symbol == "0":
                 string += symbol
                 return string
 
-        if (symbol == "."):
-            lastCharOfStringIsNumber = False
+        if symbol == ".":
+            last_char_of_string_is_number = False
             if len(string) > 0:
                 for number in numbers:
-                    if (string[-1] == number):
-                        lastCharOfStringIsNumber = True
-                        foundPoint = False
-                if (lastCharOfStringIsNumber == True):
+                    if string[-1] == number:
+                        last_char_of_string_is_number = True
+                if last_char_of_string_is_number is True:
                     string += symbol
-                #     for char in string:
-                #         if(char=="."):
-                #             foundPoint=True
-                # if(foundPoint==False):
             return string
 
     @staticmethod
@@ -48,16 +43,16 @@ class Helper:
             '6', '7', '8',
             '9'
         ]
-        lastCharOfStringIsNumber = False
+        last_char_of_string_is_number = False
         if len(string) > 0:
             for number in numbers:
-                if (string[-1] == number):
-                    lastCharOfStringIsNumber = True
-            if (lastCharOfStringIsNumber == True):
+                if string[-1] == number:
+                    last_char_of_string_is_number = True
+            if last_char_of_string_is_number is True:
                 value = eval(string)
                 string = math.sqrt(value)
 
-        if lastCharOfStringIsNumber == True:
+        if last_char_of_string_is_number is True:
             return str(round(string, 5))
         else:
             return string
@@ -70,12 +65,12 @@ class Helper:
             '6', '7', '8',
             '9'
         ]
-        lastCharOfStringIsNumber = False
+        last_char_of_string_is_number = False
         if len(string) > 0:
             for number in numbers:
-                if (string[-1] == number):
-                    lastCharOfStringIsNumber = True
-            if (lastCharOfStringIsNumber):
+                if string[-1] == number:
+                    last_char_of_string_is_number = True
+            if last_char_of_string_is_number:
                 string = eval(string)
         string = str(string)
         if string[-2] == '.' and string[-1] == '0':

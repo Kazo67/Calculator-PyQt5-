@@ -22,12 +22,12 @@ class ApplicationWindow(QMainWindow):
         self.setWindowTitle("Kalkulator")
         self.setWindowIcon(QtGui.QIcon(os.path.join("Assets", "icon.png")))
 
-        # Method showUI
-        self.showUI()
+        # Method show_ui
+        self.show_ui()
 
     # Method which is showing UI and
     # at the end has mechanism method
-    def showUI(self):
+    def show_ui(self):
         self.centralwidget = QtWidgets.QWidget(self)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -209,8 +209,8 @@ class ApplicationWindow(QMainWindow):
         self.deleteOne.setObjectName("deleteOne")
         self.setCentralWidget(self.centralwidget)
 
-        # method retranslateUI
-        self.retranslateUI()
+        # method retranslate_ui
+        self.retranslate_ui()
         QtCore.QMetaObject.connectSlotsByName(self)
 
 
@@ -218,7 +218,7 @@ class ApplicationWindow(QMainWindow):
         self.mechanism()
 
     # Method which is changing names of buttons
-    def retranslateUI(self):
+    def retranslate_ui(self):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("Kalkulator", "Kalkulator"))
         self.label.setText(_translate("Kalkulator", ""))
@@ -243,7 +243,7 @@ class ApplicationWindow(QMainWindow):
         self.deleteAll.setText(_translate("Kalkulator", "C"))
         self.deleteOne.setText(_translate("Kalkulator", "⌫"))
 
-    # Mechanism of the application used at the end of showUI method
+    # Mechanism of the application used at the end of show_ui method
     def mechanism(self):
         # Helpful variables
         _translate = QtCore.QCoreApplication.translate
